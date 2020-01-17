@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  h4.card-title{
+    position: relative;
+    display: inline;
+    top: -13px;
+  }
+  .form-check .form-check-label span {
+ top: -8px!important;  
+}

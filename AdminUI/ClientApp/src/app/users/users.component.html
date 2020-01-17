@@ -1,0 +1,206 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <div class="row">
+              <div class="col-md-8">
+                <i class="material-icons cutom" (click)="open(classic,'' , '',1, {})" title="Add new user">add_circle_outline</i>
+                <h4 class="card-title"> {{getTitle(2)}}</h4>
+              </div>
+              <div class="col-md-4 text-right">
+               
+                  <input type="text" value="" class="form-control custom" (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+              </div>
+            </div>
+          </div>
+          <div class="card-body table-responsive">
+              <div class="mat-elevation-z8">
+                  <table mat-table [dataSource]="dataSource" class="table-hover" matSort>
+                
+                    <ng-container matColumnDef="id">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                      <td mat-cell *matCellDef="let user" (click)="open(classic,'' , '',3, user)"> {{user.id}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="name">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                      <td mat-cell *matCellDef="let user" (click)="open(classic,'' , '',3, user)"> {{user.name}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="email">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                      <td mat-cell *matCellDef="let user" (click)="open(classic,'' , '',3, user)"> {{user.email}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="phone">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+                      <td mat-cell *matCellDef="let user" (click)="open(classic,'' , '',3, user)"> {{user.phone}} </td>
+                    </ng-container>
+          
+                    <ng-container matColumnDef="action">
+                      <th mat-header-cell *matHeaderCellDef> Action </th>
+                      <td mat-cell *matCellDef="let user"> <button mat-raised-button type="button" (click)="open(classic,'' , '',2, user)" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                          <i class="material-icons">edit</i>
+                        </button>
+                        <button mat-raised-button type="button" (click)="deleteUser(user.id)" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                          <i class="material-icons">close</i>
+                        </button> </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                    </tr>
+                  </table>
+                
+                  <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+                </div>
+            <!-- <table class="table table-hover">
+              <thead class="">
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Action</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of model | myfilter : searchText">
+                  <td (click)="open(classic,'' , '',3, user)">{{user.id}}</td>
+                  <td (click)="open(classic,'' , '',3, user)">{{user.name}}</td>
+                  <td (click)="open(classic,'' , '',3, user)">{{user.email}}</td>
+                  <td (click)="open(classic,'' , '',3, user)">{{user.phone}}</td>
+                  <td class="td-actions">
+                    <button mat-raised-button type="button" (click)="open(classic,'' , '',2, user)" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                      <i class="material-icons">edit</i>
+                    </button>
+                    <button mat-raised-button type="button" (click)="deleteUser(user.id)" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                      <i class="material-icons">close</i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table> -->
+          </div>
+          <ng-template #classic let-c="close" let-d="dismiss">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h6 class="modal-title" id="modal-title-default">{{modelDialog.headerTitle}}</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form name="form" [formGroup]="form" role="form" #f="ngForm" *ngIf="operationOption != 3">
+                  <div class="form-group mb-3">
+                    <div class="form-group mb-3" *ngIf="operationOption == 2">
+                      <div class="input-group input-group-alternative">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">ID</span>
+                        </div>
+                        <input class="form-control" placeholder="id" [(ngModel)]="user.id" name="userId" required type="text" disabled>
+                      </div>
+                    </div>
+                    <div class="form-group" [ngClass]="{'has-danger':form.get('name').invalid && (form.get('name').dirty || form.get('name').touched),
+                    'has-success':form.get('name').valid && (form.get('name').dirty || form.get('name').touched)}">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Name</span>
+                      </div>
+                      <input class="form-control" placeholder="username" [(ngModel)]="user.name" formControlName="name"name="username" required type="text">
+                      <div class="form-control-feedback" 
+                      *ngIf="form.get('name').errors && (form.get('name').dirty || form.get('name').touched)">
+                   <p *ngIf="form.get('name').errors.required" style="display: inline;">name is required</p>
+                   <p *ngIf="form.get('name').errors.pattern" style="display: inline;">name is not valid</p>
+                  
+                 </div>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="form-group" [ngClass]="{'has-danger':form.get('email').invalid && (form.get('email').dirty || form.get('email').touched),
+                  'has-success':form.get('email').valid && (form.get('email').dirty || form.get('email').touched)}" >
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span for="email" class="input-group-text">Email</span>
+                      </div>
+                      <input class="form-control" placeholder="email" name="email" [(ngModel)]="user.email" required formControlName="email"  >
+                      <div class="form-control-feedback" 
+                      *ngIf="form.get('email').errors && (form.get('email').dirty || form.get('email').touched)">
+                   <p *ngIf="form.get('email').errors.required" style="display: inline;">email is required</p>
+                   <p *ngIf="form.get('email').errors.pattern" style="display: inline;">email is not valid</p>
+                  
+                 </div>
+                 <!-- <p *ngIf="form.get('email').errors.email" style="display: inline;">email is not valid</p> -->
+                    </div>
+                  </div>
+                  <div class="form-group"  [ngClass]="{'has-danger':form.get('number').invalid && (form.get('number').dirty || form.get('email').touched),
+                  'has-success':form.get('number').valid && (form.get('number').dirty || form.get('number').touched)}">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Phone</span>
+                      </div>
+                      <input type="text" formControlName="number" class="form-control" placeholder="phone" name="phone" [(ngModel)]="user.phone"  required [ngClass]="{'is-invalid':form.get('number').touched && form.get('number').invalid}" pattern="[0-9]+" required>
+                      <div class="form-control-feedback" 
+                      *ngIf="form.get('number').errors && (form.get('number').dirty || form.get('number').touched)">
+                   <p *ngIf="form.get('number').errors.required" style="display: inline;">number is required</p>
+                   <p *ngIf="form.get('number').errors.pattern" style="display: inline;">no special charcter or string</p>
+                   <p *ngIf="form.get('number').errors.minlength" style="display: inline;">min lenth must be 6</p>
+                   <p *ngIf="form.get('number').errors.maxlength" style="display: inline;">not more than 10</p>                
+                   </div>
+                    </div>
+                  </div>
+                </form>
+                <form role="form" #f="ngForm" *ngIf="operationOption == 3">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="form-group mb-3">
+                        <div class="form-group mb-3">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">ID: </span>
+                            </div>
+                            <span>{{user.id}}</span>
+                          </div>
+                        </div>
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">Name: </span>
+                          </div>
+                          <span>{{user.name}}</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">Email: </span>
+                          </div>
+                          <span>{{user.email}}</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">Phone: </span>
+                          </div>
+                          <span>{{user.phone}}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <img [src]="user.img?user.img:'/assets/img/user.jpg'" style="height:75px;" />
+                    </div>
+                  </div>
+               
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary"[disabled]="form.invalid"(click)="updateUser()" *ngIf="operationOption == 2">{{modelDialog.buttonTitle}}</button>
+                <button type="button" [disabled]="form.invalid"  class="btn btn-primary" (click)="addUser()" *ngIf="operationOption == 1">{{modelDialog.buttonTitle}}</button>
+                <button type="button" class="btn btn-default  ml-auto" data-dismiss="modal" (click)="c('Close click')">Close</button>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</div>

@@ -1,0 +1,17 @@
+.card {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.39)!important;
+}
+i.material-icons.config {
+  font-size: 17px;
+  height: 0;
+  width: 0;
+  top: 13px;
+  position: absolute;
+  right: 16px;
+  cursor: pointer;
+}
+.card-footer .stats{
+  width:100%;
+  display:block;
+}
+

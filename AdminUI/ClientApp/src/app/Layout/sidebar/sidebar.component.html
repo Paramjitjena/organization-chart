@@ -1,0 +1,178 @@
+
+
+
+<div class="sidebar">
+  
+  <ul class="sidebar-nav sidebar-wrapper">
+        <li class="topelement " style="background-color: white;">
+    
+          <div class="logo"  style="background-color: white;">
+            <a routerLink="/" class="simple-text"  style="background-color: white; color: #000;">
+                <div class="logo-img">
+                    <img src="/assets/img/Logo_0.png" />
+                </div>
+                Organization
+            </a>
+        </div>
+        <a id="navbar-toggle" (click)="sidenav()"> <i class="fa fa-bars menu-icon fa-2x" aria-hidden="true"></i></a>
+        </li>
+        <li>
+             <a class="nav-link" routerLink="/">Dashboard <i class="fa fa-qrcode menu-icon fa-2x" aria-hidden="true"></i></a>
+        </li>
+        <li>
+            <a class="nav-link" routerLink="/org-chart">Org Grpup <i class="fa fa-object-group menu-icon fa-2x" aria-hidden="true"></i></a>
+  
+        </li>
+        <li>
+          <a class="nav-link" routerLink="/dep-chart"> frtg Chart <i class="fa fa-pie-chart menu-icon fa-2x" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a class="nav-link" routerLink="/org-teleric">Telerik Chart <i class="fa fa-area-chart menu-icon fa-2x" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a class="nav-link" routerLink="/groups"> Groups<i class="fa fa-users menu-icon fa-2x" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a class="nav-link" routerLink="/users">Users <i class="fa fa-user-o menu-icon fa-2x" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a class="nav-link" routerLink="/settings">Settings <i class="fa fa-cog menu-icon fa-2x" aria-hidden="true"></i></a>
+        </li>
+         
+    </ul>
+  </div>
+  
+  
+    <!-- <div class="logo">
+      <a routerLink="/" class="simple-text">
+          <div class="logo-img">
+              <img src="/assets/img/Logo_0.png" style="border-radius: 50%;"/>
+          </div>
+          Organization
+      </a>
+  </div> 
+  
+  <div class="sidebar-wrapper">
+    <div *ngIf="isMobileMenu()">
+      <form class="navbar-form">
+        <span class="bmd-form-group">
+          <div class="input-group no-border">
+            <input type="text" value="" class="form-control" placeholder="Search...">
+            <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+              <i class="material-icons">search</i>
+              <div class="ripple-container"></div>
+            </button>
+          </div>
+        </span>
+      </form>
+      <ul class="nav navbar-nav nav-mobile-menu">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">
+            <i class="material-icons">dashboard</i>
+            <p>
+              <span class="d-lg-none d-md-block">Stats</span>
+            </p>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="material-icons">notifications</i>
+            <span class="notification">5</span>
+            <p>
+              <span class="d-lg-none d-md-block">Some Actions</span>
+            </p>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Mike John responded to your email</a>
+            <a class="dropdown-item" href="#">You have 5 new tasks</a>
+            <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+            <a class="dropdown-item" href="#">Another Notification</a>
+            <a class="dropdown-item" href="#">Another One</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="javascript:void(0)" id="navbarDropdownAccountLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="material-icons">person</i>
+            <p>
+              <span class="d-lg-none d-md-block">Account</span>
+            </p>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" id="profileDropdown" aria-labelledby="navbarDropdownAccountLink">
+            <a routerLinkActive="active" href="javascript:void(0)" class="dropdown-item">
+              <i class="material-icons">account_circle</i>
+              <span> My profile</span>
+            </a>
+            <a routerLinkActive="active" href="javascript:void(0)" class="dropdown-item">
+              <i class="material-icons">build</i>
+              <span> Settings</span>
+            </a>
+            <a routerLinkActive="active" href="javascript:void(0)" class="dropdown-item">
+              <i class="material-icons">local_activity</i>
+              <span> Activity</span>
+            </a>
+            <a routerLinkActive="active" href="javascript:void(0)" class="dropdown-item">
+              <i class="material-icons">contact_support</i>
+              <span> Support</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="javascript:void(0)" (click)="logout()">
+              <i class="material-icons">exit_to_app</i>
+              <span> Logout</span>
+            </a>
+          </div>
+        </li>
+      
+      </ul>
+    </div>
+    <ul class="nav">
+      <li routerLinkActive="active" class="nav-item">
+        <a class="nav-link" routerLink="/">
+          <i class="material-icons">dashboard</i>
+          <p>Dashboard</p>
+        </a>
+      </li>
+      <li routerLinkActive="active" class="nav-item">
+        <a class="nav-link" routerLink="/org-chart">
+          <i class="material-icons">bubble_chart</i>
+          <p>Org Chart</p>
+        </a>
+      </li>
+      <li routerLinkActive="active" class="nav-item">
+        <a class="nav-link" routerLink="/org-teleric">
+          <i class="material-icons">bubble_chart</i>
+          <p>Demo Teleric Chart</p>
+        </a>
+      </li>
+      <li routerLinkActive="active" class="nav-item">
+        <a class="nav-link" routerLink="/reports">
+          <i class="material-icons">bubble_chart</i>
+          <p> Telerik Reports</p>
+        </a>
+      </li>
+      <li routerLinkActive="active" class="nav-item">
+          <a class="nav-link" routerLink="/dep-chart">
+            <i class="material-icons">bubble_chart</i>
+            <p>{{getTitle(1)}} Chart</p>
+          </a>
+        </li>
+      <li routerLinkActive="active" class="nav-item">
+        <a class="nav-link" routerLink="/users">
+          <i class="material-icons">supervisor_account</i>
+          <p>{{getTitle(2)}}</p>
+        </a>
+      </li>
+      <li routerLinkActive="active" class="nav-item">
+        <a class="nav-link" routerLink="/groups">
+          <i class="material-icons">group_work</i>
+          <p>{{getTitle(1)}}</p>
+        </a>
+      </li>
+      <li routerLinkActive="active" class="nav-item">
+        <a class="nav-link" routerLink="/settings">
+          <i class="material-icons">build</i>
+          <p>Settings</p>
+        </a>
+      </li>
+    </ul>
+  </div>  -->
+  

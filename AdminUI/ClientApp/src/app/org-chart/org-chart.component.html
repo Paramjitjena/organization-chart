@@ -1,0 +1,171 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+    
+        <i class="material-icons cutom" (click)="open(orgTempl,'' , '',1)" >add_circle_outline</i>
+       
+        <button class="btn btn-primary" style="display:none" (click)="open(orgTempl,'' , '',2)" id="addToOrg"></button>
+      <ng-template #orgTempl let-c="close" let-d="dismiss">
+        <div class="modal-content" *ngIf="throughGraph || addUToOrg">
+          <div class="modal-header">
+            <h6 class="modal-title" id="modal-title-default">ORG-Chart</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form role="form" #f="ngForm">
+              <div class="form-group mb-3">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Select User</span>
+
+                      </div>
+                      <select class="form-control" (change)="onselectUser()" [(ngModel)]="selectedUser" name="user">
+                        <option value="0" disabled>Select option</option>
+                        <option [value]="user.id" *ngFor="let user of users">{{user.name}}</option>
+                      </select>
+
+                    </div>
+                  </div>
+                  <div class="col-md-6" *ngIf="activeUser.name">
+                    <i class="material-icons" style="font-size:15px">email</i> {{activeUser?.email}}<br />
+                    <i class="material-icons" style="font-size:15px">person</i> {{activeUser?.name}}<br />
+                    <i class="material-icons" style="font-size:15px">phone</i> {{activeUser?.phone}}<br />
+                  </div>
+                  <div class="col-md-6" *ngIf="users.length == 0">
+                    <span style="color:brown">*Users not available (Already occupied by others team.)</span>
+                  </div>
+                </div>
+
+              </div>
+              <div class="form-group mb-3" *ngIf="!addUToOrg">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Assign to</span>
+
+                      </div>
+                      <select class="form-control" (change)="onSelectOrg()" [(ngModel)]="selectedOrgUser" name="org">
+                        <option value="0" disabled>Select option</option>
+                        <option [value]="org.id" *ngFor="let org of orgData">{{org.name}}</option>
+                      </select>
+
+                    </div>
+                  </div>
+                  <div class="col-md-6" *ngIf="activeOrgUser.name">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <i class="material-icons" style="font-size:15px">person</i> {{activeOrgUser?.name}}<br />
+                        <i class="material-icons" style="font-size:15px">group_work</i> {{activeOrgUser?.title}}<br />
+                      </div>
+                      <div class="col-md-4">
+                        <img [src]="activeOrgUser.img?activeOrgUser.img:'../assets/img/user.jpg'" style="height: 50px;border-radius: 50%;" />
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="form-group mb-3">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Choose group name</span>
+                  </div>
+                  <select class="form-control" [(ngModel)]="selectedgroup" name="group">
+                    <option value="0" disabled>Select name (optional)</option>
+                    <option [value]="group.id" *ngFor="let group of groups">{{group.name}}</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="addToOrganization()">ADD</button>
+
+            <button type="button" class="btn btn-link  ml-auto" data-dismiss="modal" (click)="c('Close click')">Close</button>
+          </div>
+        </div>
+
+        <div class="modal-content" *ngIf="!throughGraph && viewDetail">
+          <div class="modal-header">
+            <h6 class="modal-title" id="modal-title-default">DETAILS</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form role="form" #f="ngForm">
+              <div class="form-group mb-3">
+                <div id="main-card">
+                  <div class="cover-photo"></div>
+                  <div class="photo">
+                    <img [src]="(activeOrgUser.img)?activeOrgUser.img:'../assets/img/user.jpg'" alt="">
+                  </div>
+                  <div class="content">
+                    <h2 class="name">{{activeOrgUser.name}}</h2>
+                    <h3 class="fullstack">{{activeOrgUser.title}} <br></h3>
+
+                  </div>
+
+                </div>
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default  ml-auto" data-dismiss="modal" (click)="c('Close click')">Close</button>
+          </div>
+        </div>
+      </ng-template>
+
+<!--  ________________________ Code For Second Model______________________________________  -->
+<button class="btn btn-primary" style="display:none" (click)="open(orgGrp,'' , '',2)" id="addToGroup"></button>
+<ng-template #orgGrp let-c="close" let-d="dismiss">
+  <div class="modal-content" *ngIf="throughGraph || addUToOrg">
+    <div class="modal-header">
+      <h6 class="modal-title" id="modal-title-default">ORG-Chart</h6>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form role="form" #f="ngForm">
+           <div class="form-group mb-3">
+          <div class="input-group input-group-alternative">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Choose group name</span>
+            </div>
+            <select class="form-control" [(ngModel)]="selectedgroup" name="group">
+              <option value="0" disabled>Select name (optional)</option>
+              <option [value]="group.id" *ngFor="let group of groups">{{group.name}}</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="addToGroup()">ADD</button>
+      <button type="button" class="btn btn-link  ml-auto" data-dismiss="modal" (click)="c('Close click')">Close</button>
+    </div>
+  </div>
+</ng-template>
+<!--Second Model End-->
+    </div>
+    <div class="row">
+
+      <div class="container">
+          <div class="col-lg-12 col-md-12">
+                   <div id="tree" class="scrollbar"></div>
+                  </div>      
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- <div id="group" class="scrollbar"></div> -->

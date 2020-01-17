@@ -1,0 +1,109 @@
+
+.modal-dialog{
+  max-width: 650px!important;
+}
+@media (min-width: 576px)
+{modal-dialog 
+{
+  max-width: 650px !important;
+}
+}
+
+.cover-photo {
+  background: #041027;
+  height: 100px;
+}
+
+.photo {
+  background: #f9f9f9;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+img {
+  position: relative;
+  top: -50px;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+  box-shadow: -1px 1px 11px 6px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  background: #f9f9f9;
+  height: 100px;
+  position: relative;
+  top: -35px;
+}
+
+.contact {
+  background: #30354d;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+h2.name,
+h3,
+a {
+  margin: 0;
+  text-align: center;
+}
+
+h2.name {
+  padding-bottom: 20px;
+}
+
+h3.fullstack {
+  padding-bottom: 10px;
+}
+
+a {
+  color: #0ab581;
+  text-decoration: none;
+}
+
+  a:hover {
+    color: black;
+  }
+
+ul {
+  padding: 0;
+}
+
+.fa {
+  font-size: 22px;
+  padding: 10px;
+  text-decoration: none;
+  color: #0ab581;
+}
+
+  .fa:hover {
+    color: #000;
+  }
+
+.details-view .edit-photo {
+  background: #092863 !important;
+}
+
+.material-icons.cutom {
+  color:#02325d;
+}
+.material-icons.cutom {
+  font-size: 54px!important;
+  margin-top: -17px!important;
+  margin-left: auto;
+  cursor: pointer!important;
+}

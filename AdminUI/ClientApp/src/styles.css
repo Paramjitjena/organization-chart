@@ -1,0 +1,33 @@
+.k-popup>.k-widget {
+    border-width: 0;
+    display: none !important;
+}
+.k-toolbar {
+    /* background-clip: padding-box; */
+    display: none !important;
+}
+
+/* .ui-dialog{
+    
+} */
+/* nav.navbar.navbar-expand-lg.navbar-bacgroundImg.navbar-absolute.fixed-top {
+    position: relative;
+    top: 35px;
+} */
+.ngx-notification{
+    z-index: 1050 !important;
+    color: #fff!important;
+}
+.ngx-notification.success {
+    background-color: #449D44!important;
+    border-color: #398439!important;
+    ;
+  }
+  .ngx-notification.danger {
+    background-color: #C9302C!important;
+    border-color: #AC2925!important;
+  }
+  .ngx-notification.warning {
+    background-color: #EC971F!important;
+    border-color: #D58512!important;
+  }

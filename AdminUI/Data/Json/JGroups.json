@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Sales",
+    "isActivate": true,
+    "Date": "Fri Oct 11 2019 19:47:38"
+  },
+  {
+    "id": 2,
+    "name": "Marketing",
+    "isActivate": true,
+    "Date": "Fri Oct 11 2019 19:47:38"
+  },
+  {
+    "id": 1,
+    "name": "Head",
+    "isActivate": true,
+    "Date": "Fri Oct 11 2019 19:47:38"
+  }
+]

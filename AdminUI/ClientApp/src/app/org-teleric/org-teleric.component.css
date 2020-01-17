@@ -1,0 +1,125 @@
+
+  .material-icons.cutom {
+    color:#02325d;
+  }
+  .material-icons.cutom {
+    font-size: 54px!important;
+      margin-left: auto;
+      display: table;
+      margin-right: 15px;
+    cursor: pointer!important;
+  } 
+  .k-toolbar {
+    background-clip: padding-box;
+    display: none;
+}
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+ 
+.main
+{
+  background-color:#ECECEC;
+}
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.headpop
+{
+  text-align: center;
+}
+.form-check, label {
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #063984;
+  font-weight: 400;
+
+}
+.form-control, label, input::placeholder {
+  line-height: 1.1;
+  margin-top: -5px;
+}
+@media (min-width: 576px) {
+
+ .col-sm-6
+ {
+   margin:0 auto;
+ }
+}
+.tabcontent[_ngcontent-ng-cli-universal-c2] {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #fff7f7;
+  /* border-top: none; */
+}
+
+button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
+  cursor: pointer;
+  margin-top: 13px;
+}
+ .datalink {
+  padding-top: 7px;
+  padding-left: 12px;
+}
+.popupdata
+{
+  height: 400px;
+ 
+}
+.userImg
+{
+  border-radius: 50%;
+}
+.designation
+{
+  margin-left: 32px;
+}
+.name
+{
+  font-weight: 900;
+  font-size: 23px;
+}
+.deleteuser
+{
+  text-align: center;
+  font-family: sans-serif;
+}
+.confirmButtons
+{
+  text-align: center;
+}
+.croossymbol
+{
+  float: right;
+  margin: 17px;
+  font-size:34px;
+}

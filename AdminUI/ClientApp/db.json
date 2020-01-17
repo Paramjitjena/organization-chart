@@ -1,0 +1,403 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+ "OrgData" :
+ [
+    {
+      "Id": 1,
+      "image":"https://balkangraph.com/js/img/1.jpg",
+      "JobTitle": "President",
+      "Color": "",
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartShapes",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 1
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 2,
+      "image":"https://balkangraph.com/js/img/2.jpg",
+      "JobTitle": "VP Finance",
+      "Color": "#3399cc",
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartShapes",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 2
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 3,
+      "image":"https://balkangraph.com/js/img/3.jpg",
+      "JobTitle": "VP Customer Relations",
+      "Color": "#3399cc",
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartShapes",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 3
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 4,
+      "image":"https://balkangraph.com/js/img/4.jpg",
+      "JobTitle": "VP Human Resources",
+      "Color": "#3399cc",
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartShapes",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 4
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 5,
+      "image":"https://balkangraph.com/js/img/5.jpg",
+      "JobTitle": "Accountant",
+      "Color": "#ff9900",
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartShapes",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 5
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 6,
+      "image":"https://balkangraph.com/js/img/6.jpg",
+      "JobTitle": "Budget Analyst",
+      "Color": "#ff9900",
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartShapes",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 6
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 7,
+      "image":"https://balkangraph.com/js/img/7.jpg",
+      "JobTitle": "Relations Manager",
+      "Color": "#ff9900",
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartShapes",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 7
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 8,
+      "image":"https://balkangraph.com/js/img/8.jpg",
+      "JobTitle": "Technical Support Manager",
+      "Color": "#ff9900",
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartShapes",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 8
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 9,
+      "image":"https://balkangraph.com/js/img/9.jpg",
+      "JobTitle": "Compensation Manager",
+      "Color": "#ff9900",
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartShapes",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 9
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 10,
+      "image":"https://balkangraph.com/js/img/10.jpg",
+      "JobTitle": "Payroll Specialist",
+      "Color": "#ff9900",
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartShapes",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 10
+          }
+        ],
+        "IsTemporary": false
+      }
+    }
+  ],
+  "DiagramConnection":
+  [
+    {
+      "Id": 1,
+      "FromShapeId": 1,
+      "ToShapeId": 2,
+      "Text": null,
+      "FromPointX": null,
+      "FromPointY": null,
+      "ToPointX": null,
+      "ToPointY": null,
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartConnections",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 1
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 2,
+      "FromShapeId": 1,
+      "ToShapeId": 3,
+      "Text": null,
+      "FromPointX": null,
+      "FromPointY": null,
+      "ToPointX": null,
+      "ToPointY": null,
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartConnections",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 2
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 3,
+      "FromShapeId": 1,
+      "ToShapeId": 4,
+      "Text": null,
+      "FromPointX": null,
+      "FromPointY": null,
+      "ToPointX": null,
+      "ToPointY": null,
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartConnections",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 3
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 4,
+      "FromShapeId": 2,
+      "ToShapeId": 5,
+      "Text": null,
+      "FromPointX": null,
+      "FromPointY": null,
+      "ToPointX": null,
+      "ToPointY": null,
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartConnections",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 4
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 5,
+      "FromShapeId": 2,
+      "ToShapeId": 6,
+      "Text": null,
+      "FromPointX": null,
+      "FromPointY": null,
+      "ToPointX": null,
+      "ToPointY": null,
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartConnections",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 5
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 6,
+      "FromShapeId": 3,
+      "ToShapeId": 7,
+      "Text": null,
+      "FromPointX": null,
+      "FromPointY": null,
+      "ToPointX": null,
+      "ToPointY": null,
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartConnections",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 6
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 7,
+      "FromShapeId": 3,
+      "ToShapeId": 8,
+      "Text": null,
+      "FromPointX": null,
+      "FromPointY": null,
+      "ToPointX": null,
+      "ToPointY": null,
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartConnections",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 7
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 8,
+      "FromShapeId": 4,
+      "ToShapeId": 9,
+      "Text": null,
+      "FromPointX": null,
+      "FromPointY": null,
+      "ToPointX": null,
+      "ToPointY": null,
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartConnections",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 8
+          }
+        ],
+        "IsTemporary": false
+      }
+    },
+    {
+      "Id": 9,
+      "FromShapeId": 4,
+      "ToShapeId": 10,
+      "Text": null,
+      "FromPointX": null,
+      "FromPointY": null,
+      "ToPointX": null,
+      "ToPointY": null,
+      "EntityState": 2,
+      "EntityKey": {
+        "EntitySetName": "OrgChartConnections",
+        "EntityContainerName": "SampleEntities",
+        "EntityKeyValues": [
+          {
+            "Key": "Id",
+            "Value": 9
+          }
+        ],
+        "IsTemporary": false
+      }
+    }
+  ]
+}

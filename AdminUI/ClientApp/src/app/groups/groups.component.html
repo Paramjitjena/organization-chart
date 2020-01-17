@@ -1,0 +1,161 @@
+<div class="main-content">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <div class="row">
+              <div class="col-md-8">
+                <i class="material-icons cutom" (click)="open(groupTempl,'' , '',1, {})" title="Add new group">add_circle_outline</i>
+                <h4 class="card-title"> {{getTitle(1)}}</h4>
+
+              </div>
+              <div class="col-md-4 text-right">
+
+                <input type="text" value="" class="form-control custom" (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+
+              </div>
+            </div>
+          </div>
+          <div class="card-body table-responsive">
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" class="table-hover" matSort>
+              
+                  <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                    <td mat-cell *matCellDef="let group" (click)="open(groupTempl,'' , '',3,group)"> {{group.id}} </td>
+                  </ng-container>
+                   <ng-container matColumnDef="active">
+                    <th mat-header-cell *matHeaderCellDef> Active </th>
+                    <td mat-cell *matCellDef="let group" (click)="open(groupTempl,'' , '',3,group)">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="" [checked]="group.isActive">
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                      </td>
+                  </ng-container>
+              
+                  <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                    <td mat-cell *matCellDef="let group" (click)="open(groupTempl,'' , '',3,group)"> {{group.name}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="group icon">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Group Icon </th>
+                    <td mat-cell *matCellDef="let group" (click)="open(groupTempl,'' , '',3,group)"> <img [src]="group.img" /></td>
+                  </ng-container>
+        
+                  <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef> Action </th>
+                    <td mat-cell *matCellDef="let group"> <button mat-raised-button type="button" (click)="open(groupTempl,'' , '',2,group)" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                        <i class="material-icons">edit</i>
+                      </button>
+                      <button mat-raised-button type="button" (click)="deleteGroup(group.id)"  class="btn btn-danger btn-link btn-sm btn-just-icon">
+                        <i class="material-icons">close</i>
+                      </button> </td>
+                  </ng-container>
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                  </tr>
+                </table>
+              
+                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+              </div>
+          </div>
+          <ng-template #groupTempl let-c="close" let-d="dismiss">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h6 class="modal-title" id="modal-title-default">{{modelDialog.headerTitle}}</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body"> 
+                <form role="form" #f="ngForm" *ngIf="operationOption != 3">
+                  <div class="form-group mb-3" *ngIf="operationOption == 2">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">ID</span>
+
+                      </div>
+                      <input class="form-control" placeholder="id" [(ngModel)]="group.id" name="groupId" required type="text" disabled>
+                    </div>
+                  </div>
+                  <div class="form-group mb-3">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Name</span>
+
+                      </div>
+                      <input class="form-control" placeholder="group" [(ngModel)]="group.name" name="group" required type="text">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Active</span>
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" value="" name="isActive" [(ngModel)]="group.isActive" [checked]="group.isActive">
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <form role="form" #f="ngForm" *ngIf="operationOption == 3">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="form-group mb-3">
+                        <div class="form-group mb-3">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">ID: </span>
+
+                            </div>
+                            <span>{{group.id}}</span>
+                          </div>
+                        </div>
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">Name: </span>
+
+                          </div>
+                          <span>{{group.name}}</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">isActive: </span>
+                          </div>
+                          <span>{{group.isActive}}</span>
+                        </div>
+                      </div>
+                    </div>
+                   
+                  </div>
+
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="updateGroup()" *ngIf="operationOption == 2">{{modelDialog.buttonTitle}}</button>
+                <button type="button" class="btn btn-primary" (click)="addGroup()" *ngIf="operationOption == 1">{{modelDialog.buttonTitle}}</button>
+                <button type="button" class="btn btn-default  ml-auto" data-dismiss="modal" (click)="c('Close click')">Close</button>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
