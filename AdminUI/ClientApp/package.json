@@ -65,7 +65,7 @@
     "@telerik/kendo-draggable": "2.0.0",
     "@telerik/kendo-intl": "2.0.1",
     "@types/kendo-ui": "^2019.3.1",
-    "ajv": "6.10.0",
+    "ajv": "6.12.3",
     "angular-font-awesome": "^3.1.2",
     "arrive": "2.4.1",
     "aspnet-prerendering": "^3.0.1",
